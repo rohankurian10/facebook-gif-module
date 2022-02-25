@@ -16,7 +16,6 @@ const PostComposer = (props) => {
 
   const [gif, setGif] = useState([]);
   const [selectedGif, setSelectedGif] = useState(false);
-  // const [feed, setFeed] = useState([]);
 
   let gifClick = () => {
     setGifModal(true);
@@ -167,11 +166,7 @@ const PostComposer = (props) => {
       {gifModal && (
         <div className="PostComposer-Gif-Container">
           <div className="PostComposer-Gif-Container-Input-Container">
-            <input
-              placeholder="Search"
-              onChange={gifSearch}
-              // onClick={() => console.log(gif, selectedGif)}
-            ></input>
+            <input placeholder="Search" onChange={gifSearch}></input>
           </div>
           <div className="PostComposer-Gif-Preview-Container">
             {gif.map((gif, index) => (
