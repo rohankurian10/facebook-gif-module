@@ -16,6 +16,7 @@ const PostComposer = (props) => {
 
   const [gif, setGif] = useState([]);
   const [selectedGif, setSelectedGif] = useState(false);
+  const [inputValue, setInputValue] = useState("");
 
   let gifClick = () => {
     setGifModal(true);
@@ -24,7 +25,6 @@ const PostComposer = (props) => {
       .get(trendingGifUrl)
       .then((response) => {
         setGif(response.data.data);
-        console.log(gif.images.fixed_width.url);
       })
       .catch((e) => {
         console.log(e);
@@ -36,7 +36,6 @@ const PostComposer = (props) => {
       .get(searchGifUrl + e.target.value)
       .then((response) => {
         setGif(response.data.data);
-        console.log(response.data.data);
       })
       .catch((e) => {
         console.log(e);
@@ -101,7 +100,9 @@ const PostComposer = (props) => {
           </div>
           <div className="PostComposer-Centered-Container-Input-Container">
             <input
+              value={inputValue}
               onChange={(e) => {
+                setInputValue(e.target.value);
                 if (e.target.value !== "") {
                   setBtn(false);
                 } else {
