@@ -19,12 +19,9 @@ const Post = (props) => {
         <p>{props.text}</p>
       </div>
       <div className="Post-Gif-Container">
-        <img
-          width="100%"
-        src={props.gif}
-        ></img>
+        <img width="100%" src={props.gif}></img>
       </div>
-      <div className="Post-Button-Container"></div>
+      {/* <div className="Post-Button-Container"></div> */}
     </div>
   );
 };
